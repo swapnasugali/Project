@@ -1,0 +1,98 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+body {
+    margin: 0;
+    background: #f2f2f2;
+}
+
+header {
+    background: #251a9a;
+    color: white;
+    padding: 15px 30px;
+}
+
+header h1 {
+    margin: 0 0 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+header button {
+    margin-top: 12px;
+    padding: 8px 14px;
+    border: none;
+    cursor: pointer;
+}
+
+.form-box {
+    width: 650px;
+    margin: 30px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+h3 {
+    margin-top: 25px;
+    color: #251a9a;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+textarea {
+    height: 80px;
+}
+
+.skills {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.skills label {
+    margin-top: 5px;
+}
+
+.skills input {
+    width: auto;
+}
+
+.button-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.button-row button {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    background: #251a9a;
+    color: white;
+}
+
+.reset-button {
+    background: #555 !important;
+}
+
+#message {
+    font-weight: bold;
+}

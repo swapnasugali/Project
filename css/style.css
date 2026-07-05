@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 10px;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    background-image: url("../images/image.webp");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 25px 15px;
+}
+
+
+body > h1 {
+    margin: 0 0 25px;
+    color: rgb(242, 239, 239);
+    font-size: 50px;
+    text-align:right;
+    
+}
+
+
+.box {
+    width: 700px;
+    max-width: 100%;
+    padding: 70px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    height: 500px;
+
+    
+}
+
+.box h2 {
+    margin: 0 0 25px;
+    text-align: center;
+    color: #3328a8;
+    font-size: 30px;
+}
+
+#loginForm label {
+    display: block;
+    margin-top: 15px;
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+#loginForm input {
+    width: 100%;
+    padding: 11px;
+    margin-top: 6px;
+    border: 1px solid #aaa;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+}
+
+#loginForm input:focus {
+    border-color: #251a9a;
+}
+
+.password-box {
+    position: relative;
+}
+
+.password-box input {
+    padding-right: 45px !important;
+}
+
+.eye-button {
+    position: absolute;
+    top: 7px;
+    right: 5px;
+    width: 36px;
+    height: 36px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: transparent;
+    color: #251a9a;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+small {
+    display: block;
+    min-height: 18px;
+    margin-top: 3px;
+    color: red;
+    font-size: 13px;
+    text-align: left;
+}
+
+.remember {
+    display: flex !important;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px !important;
+    font-weight: normal !important;
+    cursor: pointer;
+}
+
+.remember input {
+    width: auto !important;
+    margin: 0 !important;
+    cursor: pointer;
+}
+
+.login-button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 22px;
+    border: none;
+    border-radius: 6px;
+    background: #251a9a;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login-button:hover {
+    background: #1b1372;
+}
+
+@media (max-width: 500px) {
+    body {
+        justify-content: flex-start;
+        padding-top: 45px;
+    }
+
+    body > h1 {
+        font-size: 28px;
+    }
+
+    .box {
+        padding: 24px 20px;
+    }
+}
