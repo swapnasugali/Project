@@ -1,7 +1,7 @@
 const user = sessionStorage.getItem("loggedInUser");
 
 if (!user) {
-    window.location.href = "login.html";
+    window.location.href = "index.html";
 }
 
 const searchInput = document.getElementById("searchInput");

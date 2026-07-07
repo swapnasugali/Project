@@ -153,5 +153,5 @@ form.addEventListener("submit", function (event) {
 
 document.getElementById("logoutButton").addEventListener("click", function () {
     sessionStorage.removeItem("loggedInUser");
-    window.location.href = "login.html";
+    window.location.href = "index.html";
 });

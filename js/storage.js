@@ -1,11 +1,15 @@
-function saveUsername(username) {
+function saveRememberedUsername(username) {
     localStorage.setItem("rememberedUsername", username);
 }
 
-function getUsername() {
+function getRememberedUsername() {
     return localStorage.getItem("rememberedUsername");
 }
 
-function removeUsername() {
+function removeRememberedUsername() {
     localStorage.removeItem("rememberedUsername");
+}
+
+function saveLoggedInUser(username) {
+    sessionStorage.setItem("loggedInUser", username);
 }

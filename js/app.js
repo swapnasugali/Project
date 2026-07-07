@@ -4,7 +4,7 @@ const password = document.getElementById("password");
 const rememberMe = document.getElementById("rememberMe");
 const showPassword = document.getElementById("showPassword");
 
-const savedUsername = getUsername();
+const savedUsername = getRememberedUsername();
 
 if (savedUsername) {
     username.value = savedUsername;
@@ -26,25 +26,32 @@ showPassword.addEventListener("click", function () {
 form.addEventListener("submit", function (event) {
     event.preventDefault();
 
-    const user = username.value.trim();
-    const pass = password.value.trim();
+    const userValue = username.value.trim();
+    const passwordValue = password.value.trim();
 
-    if (!validateLogin(user, pass)) {
+    const isValid = validateLogin(userValue, passwordValue);
+
+    if (!isValid) {
         return;
     }
 
-    if (user === "admin" && pass === "admin123") {
-        sessionStorage.setItem("loggedInUser", user);
+    if (userValue === "admin" && passwordValue === "admin123") {
+        saveLoggedInUser(userValue);
 
         if (rememberMe.checked) {
-            saveUsername(user);
+            saveRememberedUsername(userValue);
         } else {
-            removeUsername();
+            removeRememberedUsername();
         }
 
-        window.location.href = "dashboard.html";
+        window.location.href = "Pages/dashboard.html";
     } else {
         document.getElementById("passwordError").textContent =
             "Wrong username or password";
     }
 });
+
+
+
+
+

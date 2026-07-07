@@ -1,7 +1,7 @@
 const user = sessionStorage.getItem("loggedInUser");
 
 if (!user) {
-    window.location.href = "login.html";
+    window.location.href = "index.html";
 }
 
 const attendanceDate = document.getElementById("attendanceDate");
@@ -117,5 +117,5 @@ saveButton.addEventListener("click", saveAttendance);
 
 document.getElementById("logoutButton").addEventListener("click", function () {
     sessionStorage.removeItem("loggedInUser");
-    window.location.href = "login.html";
+    window.location.href = "index.html";
 });

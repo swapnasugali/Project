@@ -1,7 +1,7 @@
 const user = sessionStorage.getItem("loggedInUser");
 
 if (!user) {
-    window.location.href = "login.html";
+    window.location.href = "index.html";
 }
 
 document.getElementById("welcome").textContent = "Welcome! " + user;
