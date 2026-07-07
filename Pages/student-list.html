@@ -14,7 +14,7 @@
 
         <nav>
             <a href="dashboard.html">Dashboard</a>
-            <a href="student.html">Students</a>
+            <a href="student.html">Add Student</a>
             <a href="student-list.html">Student List</a>
             <a href="attendance.html">Attendance</a>
         </nav>
@@ -23,49 +23,67 @@
     </header>
 
     <main>
-        <div class="list-box">
-            <h2>Student List</h2>
+        <section class="list-box">
 
-            <input type="text" id="searchInput" placeholder="Search student">
+            <div class="list-heading">
+                <h2>Student List</h2>
 
-            <select id="departmentFilter">
-                <option value="">All Departments</option>
-                <option value="CSE">CSE</option>
-                <option value="ECE">ECE</option>
-                <option value="EEE">EEE</option>
-                <option value="BCA">BCA</option>
-            </select>
+                <a href="student.html" class="add-student-button">
+                    Student
+                </a>
+            </div>
 
-            <select id="sortSelect">
-                <option value="">Sort Students</option>
-                <option value="name">Sort by Name</option>
-                <option value="id">Sort by Student ID</option>
-            </select>
+            <div class="list-controls">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search by Student ID or Name"
+                >
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Student ID</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Department</th>
-                        <th>Mobile</th>
-                        <th>Status</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
+                <select id="departmentFilter">
+                    <option value="All">All Departments</option>
+                    <option value="CSE">CSE</option>
+                    <option value="ECE">ECE</option>
+                    <option value="EEE">EEE</option>
+                    <option value="BCA">BCA</option>
+                </select>
 
-                <tbody id="studentTableBody"></tbody>
-            </table>
+                <select id="sortSelect">
+                    <option value="">Sort Students</option>
+                    <option value="nameAZ">Name: A to Z</option>
+                    <option value="nameZA">Name: Z to A</option>
+                    <option value="idLowHigh">Student ID: Low to High</option>
+                    <option value="idHighLow">Student ID: High to Low</option>
+                </select>
+            </div>
 
-            <p id="noStudents"></p>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student ID</th>
+                            <th>Full Name</th>
+                            <th>Email</th>
+                            <th>Department</th>
+                            <th>Mobile</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="studentTableBody"></tbody>
+                </table>
+            </div>
 
             <div class="pagination">
-                <button id="previousButton">Previous</button>
-                <span id="pageNumber"></span>
-                <button id="nextButton">Next</button>
+                <button type="button" id="previousButton">Previous</button>
+
+                <span id="pageNumber">Page 1 of 1</span>
+
+                <button type="button" id="nextButton">Next</button>
             </div>
-        </div>
+
+        </section>
     </main>
 
     <script src="../js/student-list.js"></script>

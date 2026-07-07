@@ -1,42 +1,6 @@
 const form = document.getElementById("studentForm");
 const message = document.getElementById("message");
 
-const editStudentId = localStorage.getItem("editStudentId");
-
-if (editStudentId) {
-    const students = JSON.parse(localStorage.getItem("students")) || [];
-
-    const editStudent = students.find(function (student) {
-        return student.studentId === editStudentId;
-    });
-
-    if (editStudent) {
-        document.getElementById("studentId").value = editStudent.studentId;
-        document.getElementById("fullName").value = editStudent.fullName;
-        document.getElementById("email").value = editStudent.email;
-        document.getElementById("mobile").value = editStudent.mobile;
-        document.getElementById("gender").value = editStudent.gender;
-        document.getElementById("dob").value = editStudent.dob;
-        document.getElementById("department").value = editStudent.department;
-        document.getElementById("year").value = editStudent.year;
-        document.getElementById("section").value = editStudent.section;
-        document.getElementById("rollNumber").value = editStudent.rollNumber;
-        document.getElementById("addressLine").value = editStudent.addressLine;
-        document.getElementById("city").value = editStudent.city;
-        document.getElementById("state").value = editStudent.state;
-        document.getElementById("country").value = editStudent.country;
-        document.getElementById("pincode").value = editStudent.pincode;
-
-        document.querySelectorAll(".skills input").forEach(function (skill) {
-            if (editStudent.skills.includes(skill.value)) {
-                skill.checked = true;
-            }
-        });
-
-        document.getElementById("studentId").readOnly = true;
-    }
-}
-
 form.addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -84,15 +48,13 @@ form.addEventListener("submit", function (event) {
 
     const students = JSON.parse(localStorage.getItem("students")) || [];
 
-    if (!editStudentId) {
-        const duplicate = students.some(function (student) {
-            return student.studentId === studentId;
-        });
+    const duplicateStudent = students.some(function (student) {
+        return String(student.studentId) === String(studentId);
+    });
 
-        if (duplicate) {
-            message.textContent = "Student ID already exists";
-            return;
-        }
+    if (duplicateStudent) {
+        message.textContent = "Student ID already exists";
+        return;
     }
 
     const selectedSkills = [];
@@ -117,34 +79,15 @@ form.addEventListener("submit", function (event) {
         city: city,
         state: state,
         country: country,
-        pincode: pincode,
-        profileImage: document.getElementById("profileImage").value,
-        resume: document.getElementById("resume").value,
-        audio: document.getElementById("audio").value,
-        video: document.getElementById("video").value
+        pincode: pincode
     };
 
-    if (editStudentId) {
-        const updatedStudents = students.map(function (item) {
-            if (item.studentId === editStudentId) {
-                return student;
-            }
+    students.push(student);
 
-            return item;
-        });
+    localStorage.setItem("students", JSON.stringify(students));
 
-        localStorage.setItem("students", JSON.stringify(updatedStudents));
-        localStorage.removeItem("editStudentId");
-
-        message.style.color = "green";
-        message.textContent = "Student updated successfully";
-    } else {
-        students.push(student);
-        localStorage.setItem("students", JSON.stringify(students));
-
-        message.style.color = "green";
-        message.textContent = "Student added successfully";
-    }
+    message.style.color = "green";
+    message.textContent = "Student added successfully";
 
     setTimeout(function () {
         window.location.href = "student-list.html";
@@ -153,5 +96,5 @@ form.addEventListener("submit", function (event) {
 
 document.getElementById("logoutButton").addEventListener("click", function () {
     sessionStorage.removeItem("loggedInUser");
-    window.location.href = "index.html";
+    window.location.href = "../index.html";
 });

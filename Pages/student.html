@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -126,6 +126,196 @@
                     <button type="submit">Submit</button>
                     <button type="reset" class="reset-button">Reset</button>
                 </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="../js/student.js"></script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student</title>
+
+    <link rel="stylesheet" href="../css/student.css">
+</head>
+<body>
+
+    <header>
+        <h1>Student Management Portal</h1>
+
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="student.html">Add Student</a>
+            <a href="student-list.html">Student List</a>
+            <a href="attendance.html">Attendance</a>
+        </nav>
+
+        <button type="button" id="logoutButton">Logout</button>
+    </header>
+
+    <main>
+        <div class="form-box">
+
+            <h2 id="formTitle">Student Registration</h2>
+
+            <form id="studentForm">
+
+                <!-- 1. PERSONAL INFORMATION -->
+                <h3>1. Personal Information</h3>
+
+                <div class="form-grid">
+                    <div>
+                        <label for="studentId">Student ID <span>*</span></label>
+                        <input type="text" id="studentId" placeholder="Example: 101">
+                    </div>
+
+                    <div>
+                        <label for="fullName">Full Name <span>*</span></label>
+                        <input type="text" id="fullName" placeholder="Enter full name">
+                    </div>
+
+                    <div>
+                        <label for="email">Email <span>*</span></label>
+                        <input type="email" id="email" placeholder="example@gmail.com">
+                    </div>
+
+                    <div>
+                        <label for="mobile">Mobile Number <span>*</span></label>
+                        <input type="text" id="mobile" placeholder="Enter 10 digit mobile number">
+                    </div>
+
+                    <div>
+                        <label for="gender">Gender</label>
+                        <select id="gender">
+                            <option value="">Select Gender</option>
+                            <option value="Female">Female</option>
+                            <option value="Male">Male</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="dob">Date of Birth</label>
+                        <input type="date" id="dob">
+                    </div>
+                </div>
+
+                <!-- 2. ACADEMIC INFORMATION -->
+                <h3>2. Academic Information</h3>
+
+                <div class="form-grid">
+                    <div>
+                        <label for="department">Department <span>*</span></label>
+                        <select id="department">
+                            <option value="">Select Department</option>
+                            <option value="CSE">CSE</option>
+                            <option value="ECE">ECE</option>
+                            <option value="EEE">EEE</option>
+                            <option value="BCA">BCA</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="year">Year</label>
+                        <select id="year">
+                            <option value="">Select Year</option>
+                            <option value="1st Year">1st Year</option>
+                            <option value="2nd Year">2nd Year</option>
+                            <option value="3rd Year">3rd Year</option>
+                            <option value="4th Year">4th Year</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="section">Section</label>
+                        <input type="text" id="section" placeholder="Example: A">
+                    </div>
+
+                    <div>
+                        <label for="rollNumber">Roll Number</label>
+                        <input type="text" id="rollNumber" placeholder="Example: CSE101">
+                    </div>
+                </div>
+
+                <!-- 3. SKILLS -->
+                <h3>3. Skills</h3>
+
+                <div class="skills">
+                    <label><input type="checkbox" name="skills" value="HTML"> HTML</label>
+                    <label><input type="checkbox" name="skills" value="CSS"> CSS</label>
+                    <label><input type="checkbox" name="skills" value="JavaScript"> JavaScript</label>
+                    <label><input type="checkbox" name="skills" value="React"> React</label>
+                    <label><input type="checkbox" name="skills" value="Node.js"> Node.js</label>
+                </div>
+
+                <!-- 4. ADDRESS -->
+                <h3>4. Address</h3>
+
+                <div class="form-grid">
+                    <div class="full-width">
+                        <label for="addressLine">Address Line</label>
+                        <textarea id="addressLine" placeholder="Enter house number, street and area"></textarea>
+                    </div>
+
+                    <div>
+                        <label for="city">City</label>
+                        <input type="text" id="city" placeholder="Enter city">
+                    </div>
+
+                    <div>
+                        <label for="state">State</label>
+                        <input type="text" id="state" placeholder="Enter state">
+                    </div>
+
+                    <div>
+                        <label for="country">Country</label>
+                        <input type="text" id="country" placeholder="Enter country">
+                    </div>
+
+                    <div>
+                        <label for="pincode">Pincode</label>
+                        <input type="text" id="pincode" placeholder="Enter pincode">
+                    </div>
+                </div>
+
+                <!-- 5. UPLOADS -->
+                <h3>5. Uploads</h3>
+
+                <div class="form-grid">
+                    <div>
+                        <label for="profileImage">Profile Image</label>
+                        <input type="file" id="profileImage" accept="image/*">
+                    </div>
+
+                    <div>
+                        <label for="resume">Resume</label>
+                        <input type="file" id="resume" accept=".pdf,.doc,.docx">
+                    </div>
+
+                    <div>
+                        <label for="audio">Audio Introduction</label>
+                        <input type="file" id="audio" accept="audio/*">
+                    </div>
+
+                    <div>
+                        <label for="video">Video Introduction</label>
+                        <input type="file" id="video" accept="video/*">
+                    </div>
+                </div>
+
+                <p id="message"></p>
+
+                <div class="button-row">
+                    <button type="submit" id="submitButton">Save Student</button>
+                    <button type="reset" class="reset-button">Clear Form</button>
+                </div>
+
             </form>
         </div>
     </main>

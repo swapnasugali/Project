@@ -1,174 +1,214 @@
-const user = sessionStorage.getItem("loggedInUser");
-
-if (!user) {
-    window.location.href = "index.html";
-}
-
+const tableBody = document.getElementById("studentTableBody");
 const searchInput = document.getElementById("searchInput");
 const departmentFilter = document.getElementById("departmentFilter");
 const sortSelect = document.getElementById("sortSelect");
-const tableBody = document.getElementById("studentTableBody");
-const noStudents = document.getElementById("noStudents");
 const previousButton = document.getElementById("previousButton");
 const nextButton = document.getElementById("nextButton");
 const pageNumber = document.getElementById("pageNumber");
+const logoutButton = document.getElementById("logoutButton");
 
 let currentPage = 1;
-const studentsPerPage = 3;
+const studentsPerPage = 5;
 
 function getStudents() {
     return JSON.parse(localStorage.getItem("students")) || [];
 }
 
-function showStudents() {
+function getFilteredStudents() {
     let students = getStudents();
 
-    const searchText = searchInput.value.toLowerCase();
+    const searchText = searchInput.value.trim().toLowerCase();
     const selectedDepartment = departmentFilter.value;
-    const sortValue = sortSelect.value;
+    const selectedSort = sortSelect.value;
 
     students = students.filter(function (student) {
-        const id = student.studentId.toLowerCase();
-        const name = student.fullName.toLowerCase();
-        const email = student.email.toLowerCase();
+        const studentId = String(student.studentId || "").toLowerCase();
+        const fullName = String(student.fullName || "").toLowerCase();
 
-        const searchMatch =
-            id.includes(searchText) ||
-            name.includes(searchText) ||
-            email.includes(searchText);
+        const matchesSearch =
+            studentId.includes(searchText) ||
+            fullName.includes(searchText);
 
-        const departmentMatch =
-            selectedDepartment === "" ||
+        const matchesDepartment =
+            selectedDepartment === "All" ||
             student.department === selectedDepartment;
 
-        return searchMatch && departmentMatch;
+        return matchesSearch && matchesDepartment;
     });
 
-    if (sortValue === "name") {
+    if (selectedSort === "nameAZ") {
         students.sort(function (a, b) {
-            return a.fullName.localeCompare(b.fullName);
+            return String(a.fullName).localeCompare(String(b.fullName));
         });
     }
 
-    if (sortValue === "id") {
+    if (selectedSort === "nameZA") {
         students.sort(function (a, b) {
-            return a.studentId.localeCompare(b.studentId);
+            return String(b.fullName).localeCompare(String(a.fullName));
         });
     }
 
-    const totalPages = Math.ceil(students.length / studentsPerPage) || 1;
+    if (selectedSort === "idLowHigh") {
+        students.sort(function (a, b) {
+            return String(a.studentId).localeCompare(
+                String(b.studentId),
+                undefined,
+                { numeric: true }
+            );
+        });
+    }
+
+    if (selectedSort === "idHighLow") {
+        students.sort(function (a, b) {
+            return String(b.studentId).localeCompare(
+                String(a.studentId),
+                undefined,
+                { numeric: true }
+            );
+        });
+    }
+
+    return students;
+}
+
+function displayStudents() {
+    const students = getFilteredStudents();
+
+    const totalPages = Math.max(
+        1,
+        Math.ceil(students.length / studentsPerPage)
+    );
 
     if (currentPage > totalPages) {
         currentPage = totalPages;
     }
 
-    const start = (currentPage - 1) * studentsPerPage;
-    const pageStudents = students.slice(start, start + studentsPerPage);
+    const startIndex = (currentPage - 1) * studentsPerPage;
+
+    const studentsForCurrentPage = students.slice(
+        startIndex,
+        startIndex + studentsPerPage
+    );
 
     tableBody.innerHTML = "";
 
-    if (pageStudents.length === 0) {
-        noStudents.textContent = "No students found";
+    if (studentsForCurrentPage.length === 0) {
+        tableBody.innerHTML = `
+            <tr>
+                <td colspan="7" class="no-data">
+                    No students found
+                </td>
+            </tr>
+        `;
     } else {
-        noStudents.textContent = "";
+        studentsForCurrentPage.forEach(function (student) {
+            const row = document.createElement("tr");
 
-        pageStudents.forEach(function (student) {
-            tableBody.innerHTML += `
-                <tr>
-                    <td>${student.studentId}</td>
-                    <td>${student.fullName}</td>
-                    <td>${student.email}</td>
-                    <td>${student.department}</td>
-                    <td>${student.mobile}</td>
-                    <td>Active</td>
-                    <td>
-                        <button onclick="viewStudent('${student.studentId}')">View</button>
-                        <button onclick="editStudent('${student.studentId}')">Edit</button>
-                        <button onclick="deleteStudent('${student.studentId}')">Delete</button>
-                    </td>
-                </tr>
+            row.innerHTML = `
+                <td>${student.studentId || "-"}</td>
+                <td>${student.fullName || "-"}</td>
+                <td>${student.email || "-"}</td>
+                <td>${student.department || "-"}</td>
+                <td>${student.mobile || "-"}</td>
+                <td>Active</td>
+                <td class="action-buttons">
+                    <button type="button" class="view-btn" data-id="${student.studentId}">
+                        View
+                    </button>
+
+                    <button type="button" class="edit-btn" data-id="${student.studentId}">
+                        Edit
+                    </button>
+
+                    <button type="button" class="delete-btn" data-id="${student.studentId}">
+                        Delete
+                    </button>
+                </td>
             `;
+
+            tableBody.appendChild(row);
         });
     }
 
-    pageNumber.textContent = "Page " + currentPage + " of " + totalPages;
+    pageNumber.textContent = `Page ${currentPage} of ${totalPages}`;
 
     previousButton.disabled = currentPage === 1;
     nextButton.disabled = currentPage === totalPages;
 }
 
-function viewStudent(studentId) {
-    const students = getStudents();
+tableBody.addEventListener("click", function (event) {
+    const studentId = event.target.dataset.id;
 
-    const student = students.find(function (item) {
-        return item.studentId === studentId;
-    });
-
-    alert(
-        "Student ID: " + student.studentId +
-        "\nName: " + student.fullName +
-        "\nEmail: " + student.email +
-        "\nMobile: " + student.mobile +
-        "\nDepartment: " + student.department +
-        "\nYear: " + student.year +
-        "\nSection: " + student.section +
-        "\nRoll Number: " + student.rollNumber
-    );
-}
-
-function editStudent(studentId) {
-    localStorage.setItem("editStudentId", studentId);
-    window.location.href = "student.html";
-}
-
-function deleteStudent(studentId) {
-    const confirmDelete = confirm("Do you want to delete this student?");
-
-    if (!confirmDelete) {
+    if (!studentId) {
         return;
     }
 
-    const students = getStudents();
+    if (event.target.classList.contains("view-btn")) {
+        localStorage.setItem("viewStudentId", studentId);
+        window.location.href = "profile.html";
+    }
 
-    const updatedStudents = students.filter(function (student) {
-        return student.studentId !== studentId;
-    });
+    if (event.target.classList.contains("edit-btn")) {
+        localStorage.setItem("editStudentId", studentId);
+        window.location.href = "student.html";
+    }
 
-    localStorage.setItem("students", JSON.stringify(updatedStudents));
+    if (event.target.classList.contains("delete-btn")) {
+        const isConfirmed = confirm("Do you want to delete this student?");
 
-    showStudents();
-}
+        if (!isConfirmed) {
+            return;
+        }
+
+        const students = getStudents();
+
+        const updatedStudents = students.filter(function (student) {
+            return String(student.studentId) !== String(studentId);
+        });
+
+        localStorage.setItem("students", JSON.stringify(updatedStudents));
+
+        displayStudents();
+    }
+});
 
 searchInput.addEventListener("input", function () {
     currentPage = 1;
-    showStudents();
+    displayStudents();
 });
 
 departmentFilter.addEventListener("change", function () {
     currentPage = 1;
-    showStudents();
+    displayStudents();
 });
 
 sortSelect.addEventListener("change", function () {
     currentPage = 1;
-    showStudents();
+    displayStudents();
 });
 
 previousButton.addEventListener("click", function () {
     if (currentPage > 1) {
         currentPage--;
-        showStudents();
+        displayStudents();
     }
 });
 
 nextButton.addEventListener("click", function () {
-    currentPage++;
-    showStudents();
+    const totalPages = Math.max(
+        1,
+        Math.ceil(getFilteredStudents().length / studentsPerPage)
+    );
+
+    if (currentPage < totalPages) {
+        currentPage++;
+        displayStudents();
+    }
 });
 
-document.getElementById("logoutButton").addEventListener("click", function () {
+logoutButton.addEventListener("click", function () {
     sessionStorage.removeItem("loggedInUser");
-    window.location.href = "login.html";
+    window.location.href = "../index.html";
 });
 
-showStudents();
+displayStudents();

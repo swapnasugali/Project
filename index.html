@@ -3,52 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Student Management Portal - Login</title>
 
+    <!-- CSS file -->
     <link rel="stylesheet" href="./css/style.css">
 
-    <!-- Password eye icon library -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <!-- Eye icon library -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
 </head>
 <body>
 
-  <h1>Student Management Portal</h1>
-    <div class="box">
-      
-        <h2>Admin Login</h2>
+    <div class="login-page">
 
-        <form id="loginForm">
+        <div class="login-box">
 
-            <label for="username">Username</label>
-            <input type="text" id="username" placeholder="Enter username">
-            <small id="usernameError"></small>
+            <h1>Student Management Portal</h1>
+            <p class="login-subtitle">Admin Login</p>
 
-            <label for="password">Password</label>
+            <form id="loginForm">
 
-            <div class="password-box">
-                <input type="password" id="password" placeholder="Enter password">
+                <!-- Username -->
+                <div class="form-group">
+                    <label for="username">Username</label>
 
-                <button type="button" id="showPassword" class="eye-button">
-                    <i class="fa-solid fa-eye-slash"></i>
+                    <input
+                        type="text"
+                        id="username"
+                        placeholder="Enter username"
+                        autocomplete="username"
+                    >
+
+                    <small id="usernameError"></small>
+                </div>
+
+                <!-- Password -->
+                <div class="form-group">
+                    <label for="password">Password</label>
+
+                    <div class="password-box">
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="Enter password"
+                            autocomplete="current-password"
+                        >
+
+                        <button
+                            type="button"
+                            id="showPassword"
+                            class="eye-button"
+                            aria-label="Show or hide password"
+                        >
+                            <i class="fa-solid fa-eye-slash"></i>
+                        </button>
+                    </div>
+
+                    <small id="passwordError"></small>
+                </div>
+
+                <!-- Remember me -->
+                <label class="remember">
+                    <input type="checkbox" id="rememberMe">
+                    Remember Me
+                </label>
+
+                <!-- Login -->
+                <button type="submit" class="login-button">
+                    Login
                 </button>
-            </div>
 
-            <small id="passwordError"></small>
+            </form>
 
-            <label class="remember">
-                <input type="checkbox" id="rememberMe">
-                Remember Me
-            </label>
+            <p class="login-note">
+                Username: <b>admin</b> &nbsp; Password: <b>admin123</b>
+            </p>
 
-            <button type="submit" class="login-button">Login</button>
-        </form>
+        </div>
+
     </div>
- 
+
+    <!-- JavaScript files: order must not change -->
     <script src="./js/storage.js"></script>
     <script src="./js/validation.js"></script>
-    <script src="./js/app.js"></script> 
+    <script src="./js/app.js"></script>
 
-   
 </body>
 </html>
