@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance</title>
+
+    <link rel="stylesheet" href="../css/student.css">
+</head>
+<body>
+
+    <header>
+        <h1>Student Management Portal</h1>
+
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="student.html">Add Student</a>
+            <a href="student-list.html">Student List</a>
+            <a href="attendance.html">Attendance</a>
+        </nav>
+
+        <button type="button" id="logoutButton">Logout</button>
+    </header>
+
+    <main>
+        <div class="list-box">
+            <h2>Attendance Management</h2>
+
+            <label for="attendanceDate">Select Date</label>
+            <input style = "width:20%;"type="date" id="attendanceDate"><br><br>
+
+            <button type="button" id="loadButton">Load Students</button><br><br>
+
+            <div class="table-box">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student ID</th>
+                            <th>Name</th>
+                            <th>Department</th>
+                            <th>Attendance Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="attendanceTableBody"></tbody>
+                </table>
+            </div>
+
+            <p id="message"></p>
+
+            <button type="button" id="saveButton">Save Attendance</button>
+        </div>
+    </main>
+
+    <script src="../js/attendance.js"></script>
+</body>
+</html>
