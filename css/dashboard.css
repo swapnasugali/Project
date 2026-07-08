@@ -18,8 +18,12 @@ body {
 /* =========================
    LAPTOP VIEW - 901px and above
    ========================= */
+<<<<<<< HEAD
 
 .layout {
+=======
+ .layout {
+>>>>>>> c4d43d1 (added profile, modifeied code in all the modules)
     display: flex;
     min-height: 100vh;
 }
@@ -96,14 +100,38 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
+<<<<<<< HEAD
 }
 
 .card {
     width: 100%;
+=======
+}
+
+#container {
+    display: flex;
+    gap: 20px;             
+    flex-wrap: wrap;       
+    margin-top: 20px;
+}
+
+.card {
+
+    width: calc(10% - 15px);
+    min-height: 110px;
+>>>>>>> c4d43d1 (added profile, modifeied code in all the modules)
     padding: 22px;
     background: rgba(255, 255, 255, 0.94);
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+<<<<<<< HEAD
+=======
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+>>>>>>> c4d43d1 (added profile, modifeied code in all the modules)
 }
 
 .card p {
@@ -118,7 +146,11 @@ body {
 }
 
 .recent {
+<<<<<<< HEAD
     width: 100%;
+=======
+    width: 50%;
+>>>>>>> c4d43d1 (added profile, modifeied code in all the modules)
     margin-top: 28px;
     padding: 22px;
     background: rgba(255, 255, 255, 0.94);
@@ -131,10 +163,17 @@ body {
     margin-bottom: 12px;
 }
 
+<<<<<<< HEAD
 /* =========================
    TABLET VIEW - 601px to 900px
    ========================= */
 
+=======
+
+   /* TABLET VIEW - 601px to 900px */
+
+ 
+>>>>>>> c4d43d1 (added profile, modifeied code in all the modules)
 @media (min-width: 601px) and (max-width: 900px) {
     .sidebar {
         width: 210px;
@@ -174,6 +213,7 @@ body {
     .card h2 {
         font-size: 26px;
     }
+<<<<<<< HEAD
 }
 
 /* =========================
@@ -181,6 +221,14 @@ body {
    ========================= */
 
 @media (max-width: 600px) {
+=======
+} 
+
+ 
+   /* PHONE VIEW - 600px and below */
+
+ @media (max-width: 600px) {
+>>>>>>> c4d43d1 (added profile, modifeied code in all the modules)
     body {
         background-attachment: scroll;
     }
@@ -248,3 +296,7 @@ body {
     }
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> c4d43d1 (added profile, modifeied code in all the modules)

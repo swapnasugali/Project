@@ -1,140 +1,3 @@
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Registration</title>
-
-    <link rel="stylesheet" href="../css/student.css">
-</head>
-<body>
-
-    <header>
-        <h1>Student Management Portal</h1>
-
-        <nav>
-            <a href="dashboard.html">Dashboard</a>
-            <a href="student.html">Students</a>
-            <a href="student-list.html">Student-List</a>
-           
-        </nav>
-
-        <button type="button" id="logoutButton">Logout</button>
-    </header>
-
-    <main>
-        <div class="form-box">
-            <h2>Student Registration</h2>
-
-            <form id="studentForm">
-
-                <h3>Personal Information</h3>
-
-                <label>Student ID</label>
-                <input type="text" id="studentId" placeholder="Enter student ID">
-
-                <label>Full Name</label>
-                <input type="text" id="fullName" placeholder="Enter full name">
-
-                <label>Email</label>
-                <input type="email" id="email" placeholder="Enter email">
-
-                <label>Mobile Number</label>
-                <input type="text" id="mobile" placeholder="Enter 10 digit mobile number">
-
-                <label>Gender</label>
-                <select id="gender">
-                    <option value="">Select Gender</option>
-                    <option value="Female">Female</option>
-                    <option value="Male">Male</option>
-                    <option value="Other">Other</option>
-                </select>
-
-                <label>Date of Birth</label>
-                <input type="date" id="dob">
-
-                <h3>Academic Information</h3>
-
-                <label>Department</label>
-                <select id="department">
-                    <option value="">Select Department</option>
-                    <option value="CSE">CSE</option>
-                    <option value="ECE">ECE</option>
-                    <option value="EEE">EEE</option>
-                    <option value="BCA">BCA</option>
-                </select>
-
-                <label>Year</label>
-                <select id="year">
-                    <option value="">Select Year</option>
-                    <option value="1st Year">1st Year</option>
-                    <option value="2nd Year">2nd Year</option>
-                    <option value="3rd Year">3rd Year</option>
-                    <option value="4th Year">4th Year</option>
-                </select>
-
-                <label>Section</label>
-                <input type="text" id="section" placeholder="Example: A">
-
-                <label>Roll Number</label>
-                <input type="text" id="rollNumber" placeholder="Enter roll number">
-
-                <h3>Skills</h3>
-
-                <div class="skills">
-                    <label><input type="checkbox" value="HTML"> HTML</label>
-                    <label><input type="checkbox" value="CSS"> CSS</label>
-                    <label><input type="checkbox" value="JavaScript"> JavaScript</label>
-                    <label><input type="checkbox" value="React"> React</label>
-                    <label><input type="checkbox" value="Node.js"> Node.js</label>
-                </div>
-
-                <h3>Address</h3>
-
-                <label>Address Line</label>
-                <textarea id="addressLine" placeholder="Enter address"></textarea>
-
-                <label>City</label>
-                <input type="text" id="city" placeholder="Enter city">
-
-                <label>State</label>
-                <input type="text" id="state" placeholder="Enter state">
-
-                <label>Country</label>
-                <input type="text" id="country" placeholder="Enter country">
-
-                <label>Pincode</label>
-                <input type="text" id="pincode" placeholder="Enter pincode">
-
-                <h3>Uploads</h3>
-
-                <label>Profile Image</label>
-                <input type="file" id="profileImage" accept="image/*">
-
-                <label>Resume</label>
-                <input type="file" id="resume" accept=".pdf,.doc,.docx">
-
-                <label>Audio Introduction</label>
-                <input type="file" id="audio" accept="audio/*">
-
-                <label>Video Introduction</label>
-                <input type="file" id="video" accept="video/*">
-
-                <p id="message"></p>
-
-                <div class="button-row">
-                    <button type="submit">Submit</button>
-                    <button type="reset" class="reset-button">Reset</button>
-                </div>
-            </form>
-        </div>
-    </main>
-
-    <script src="../js/student.js"></script>
-</body>
-</html> -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -306,6 +169,23 @@
                     <div>
                         <label for="video">Video Introduction</label>
                         <input type="file" id="video" accept="video/*">
+                        <label for="profileImage" >Profile Image</label>
+                        <input type="file" id="profileImage" accept="image/*" required>
+                    </div>
+
+                    <div>
+                        <label for="resume" >Resume</label>
+                        <input type="file" id="resume" accept=".pdf,.doc,.docx" required>
+                    </div>
+
+                    <div>
+                        <label for="audio" >Audio Introduction</label>
+                        <input type="file" id="audio" accept="audio/*" required>
+                    </div>
+
+                    <div>
+                        <label for="video" >Video Introduction</label>
+                        <input type="file" id="video" accept="video/*" required>
                     </div>
                 </div>
 

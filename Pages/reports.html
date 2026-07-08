@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reports Module</title>
+
+  <link rel="stylesheet" href="../css/reports.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="page-header">
+      <div>
+        <h1>Student Reports</h1>
+        <p>View marks, attendance, and department-wise reports.</p>
+      </div>
+
+      <a href="dashboard.html" class="back-button">← Dashboard</a>
+    </div>
+
+    <!-- Summary Cards -->
+    <div class="cards">
+      <div class="card">
+        <p>Total Students</p>
+        <h2 id="totalStudents">0</h2>
+      </div>
+
+      <div class="card">
+    <p>Average Marks</p>
+    <h2 id="averageMarks">0 / 500 (0%)</h2>
+    </div>
+
+
+      <div class="card">
+        <p>Passed Students</p>
+        <h2 id="passedStudents">0</h2>
+      </div>
+
+      <div class="card">
+        <p>Failed Students</p>
+        <h2 id="failedStudents">0</h2>
+      </div>
+    </div>
+
+    <!-- Top Students -->
+    <div class="report-box">
+      <h2>Top Students</h2>
+
+      <div class="table-box">
+        <table>
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Student ID</th>
+              <th>Student Name</th>
+              <th>Department</th>
+              <th>Total</th>
+              <th>Percentage</th>
+              <th>Grade</th>
+            </tr>
+          </thead>
+
+          <tbody id="topStudentsTable"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Failed Students -->
+    <div class="report-box">
+      <h2>Failed Students</h2>
+
+      <div class="table-box">
+        <table>
+          <thead>
+            <tr>
+              <th>S.No</th>
+              <th>Student ID</th>
+              <th>Student Name</th>
+              <th>Department</th>
+              <th>Total</th>
+              <th>Percentage</th>
+              <th>Grade</th>
+            </tr>
+          </thead>
+
+          <tbody id="failedStudentsTable"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Attendance Report -->
+    <div class="attendance-grid">
+
+      <div class="report-box">
+        <h2>Highest Attendance</h2>
+        <div id="highestAttendance"></div>
+      </div>
+
+      <div class="report-box">
+        <h2>Lowest Attendance</h2>
+        <div id="lowestAttendance"></div>
+      </div>
+
+    </div>
+
+    <!-- Department Wise Report -->
+    <div class="report-box">
+      <h2>Department Wise Students Total</h2>
+
+      <div class="table-box">
+        <table>
+          <thead>
+            <tr>
+              <th>S.No</th>
+              <th>Department</th>
+              <th>Total Students</th>
+            </tr>
+          </thead>
+
+          <tbody id="departmentTable"></tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="../js/reports.js"></script>
+</body>
+</html>

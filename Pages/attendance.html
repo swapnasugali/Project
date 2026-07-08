@@ -1,57 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Attendance</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Attendance Module</title>
 
-    <link rel="stylesheet" href="../css/student.css">
+  <link rel="stylesheet" href="../css/attendance.css">
 </head>
 <body>
+  
 
-    <header>
-        <h1>Student Management Portal</h1>
+  <div class="container">
+    <h1>Attendance Management</h1>
+    
+    <p class="subtitle">Mark and manage daily student attendance</p>
+<a href="marks.html">Marks</a><br><br>
+    <div class="cards">
+      <div class="card">
+        <p>Total Students</p>
+        <h2 id="totalStudents">0</h2>
+      </div>
 
-        <nav>
-            <a href="dashboard.html">Dashboard</a>
-            <a href="student.html">Add Student</a>
-            <a href="student-list.html">Student List</a>
-            <a href="attendance.html">Attendance</a>
-        </nav>
+      <div class="card">
+        <p>Present Students</p>
+        <h2 id="presentStudents">0</h2>
+      </div>
 
-        <button type="button" id="logoutButton">Logout</button>
-    </header>
+      <div class="card">
+        <p>Absent Students</p>
+        <h2 id="absentStudents">0</h2>
+      </div>
 
-    <main>
-        <div class="list-box">
-            <h2>Attendance Management</h2>
+      <div class="card">
+        <p>Selected Date</p>
+        <h2 id="selectedDateText">-</h2>
+      </div>
+    </div>
 
-            <label for="attendanceDate">Select Date</label>
-            <input style = "width:20%;"type="date" id="attendanceDate"><br><br>
+    <div class="top">
+      <div>
+        <label for="date">Select Attendance Date</label>
+        <input type="date" id="date">
+      </div>
 
-            <button type="button" id="loadButton">Load Students</button><br><br>
+      <div class="buttons">
+        <button type="button" id="allPresentButton">Mark All Present</button>
+        <button type="button" id="saveAttendanceButton">Save / Update Attendance</button>
+      </div>
+    </div>
 
-            <div class="table-box">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Student ID</th>
-                            <th>Name</th>
-                            <th>Department</th>
-                            <th>Attendance Status</th>
-                        </tr>
-                    </thead>
+    <div class="table-box">
+      <table>
+        <thead>
+          <tr>
+            <th>S.No</th>
+            <th>Student ID</th>
+            <th>Student Name</th>
+            <th>Department</th>
+            <th>Mark Present</th>
+            <th>Mark Absent</th>
+            <th>Attendance Percentage</th>
+            <th>Monthly Attendance</th>
+            <th>Attendance History</th>
+          </tr>
+        </thead>
 
-                    <tbody id="attendanceTableBody"></tbody>
-                </table>
-            </div>
+        <tbody id="studentTable"></tbody>
+      </table>
+    </div>
 
-            <p id="message"></p>
+    <div id="historyBox" class="history hidden">
+      <button type="button" class="close" id="closeHistoryButton">×</button>
 
-            <button type="button" id="saveButton">Save Attendance</button>
-        </div>
-    </main>
+      <h2 id="historyTitle">Attendance History</h2>
 
-    <script src="../js/attendance.js"></script>
+      <div class="history-summary">
+        <p>Total Days: <b id="historyTotal">0</b></p>
+        <p>Present Days: <b id="historyPresent">0</b></p>
+        <p>Absent Days: <b id="historyAbsent">0</b></p>
+        <p>Attendance: <b id="historyPercentage">0%</b></p>
+      </div>
+
+      <div id="historyData"></div>
+    </div>
+  </div>
+<a href="dashboard.html" class="back-button">← Dashboard</a>
+  <script src="../js/attendance.js"></script>
 </body>
 </html>

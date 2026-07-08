@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marks Management</title>
+
+  <link rel="stylesheet" href="../css/marks.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="page-header">
+      <div>
+        <h1>Marks Management</h1>
+        <p>Enter marks for each subject and save student results.</p>
+      </div>
+
+
+      <a href="reports.html" class="reports-button">View Reports</a>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <p>Total Students</p>
+        <h2 id="totalStudents">0</h2>
+      </div>
+
+      <div class="card">
+        <p>Passed Students</p>
+        <h2 id="passedStudents">0</h2>
+      </div>
+
+      <div class="card">
+        <p>Failed Students</p>
+        <h2 id="failedStudents">0</h2>
+      </div>
+    </div>
+
+    <div class="card">
+  <p>Average Marks</p>
+  <h2 id="averageMarks">0%</h2>
+</div>
+
+    <div class="action-box">
+      <p>Enter marks from 0 to 100 for HTML, CSS, JavaScript, React, and Node.</p>
+
+      <div class="buttons">
+        <button type="button" id="saveMarksButton">Save / Update Marks</button>
+        <button type="button" id="clearMarksButton" class="delete-button">Clear All Marks</button>
+
+      </div>
+    </div>
+
+    <div class="table-box">
+      <table>
+        <thead>
+          <tr>
+            <th>S.No</th>
+            <th>Student ID</th>
+            <th>Student Name</th>
+            <th>Department</th>
+            <th>HTML</th>
+            <th>CSS</th>
+            <th>JavaScript</th>
+            <th>React</th>
+            <th>Node</th>
+            <th>Total</th>
+            <th>Percentage</th>
+            <th>Grade</th>
+            <th>Rank</th>
+          </tr>
+        </thead>
+
+        <tbody id="marksTable"></tbody>
+      </table>
+    </div>
+  </div>
+      <a href="dashboard.html" class="back-button">← Dashboard</a>
+  <script src="../js/marks.js"></script>
+</body>
+</html>
