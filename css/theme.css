@@ -1,0 +1,78 @@
+/* Common dark theme for all pages */
+
+body.dark-mode {
+    background: #0f172a !important;
+    color: #e2e8f0 !important;
+}
+
+/* Main boxes */
+body.dark-mode .container,
+body.dark-mode .main-content,
+body.dark-mode .list-box,
+body.dark-mode .settings-box,
+body.dark-mode .report-box,
+body.dark-mode .recent,
+body.dark-mode .card,
+body.dark-mode .table-box,
+body.dark-mode .form-box,
+body.dark-mode .student-form {
+    background: #1e293b !important;
+    color: #e2e8f0 !important;
+}
+
+/* Headings and normal text */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode p,
+body.dark-mode label,
+body.dark-mode td,
+body.dark-mode span {
+    color: #e2e8f0 !important;
+}
+
+/* Sidebar and header */
+body.dark-mode .sidebar,
+body.dark-mode header {
+    background: #111827 !important;
+}
+
+/* Input fields */
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+    background: #334155 !important;
+    color: white !important;
+    border-color: #64748b !important;
+}
+
+/* Tables */
+body.dark-mode table {
+    background: #1e293b !important;
+}
+
+body.dark-mode th {
+    background: #111827 !important;
+    color: white !important;
+}
+
+body.dark-mode td {
+    border-color: #475569 !important;
+}
+
+body.dark-mode tbody tr:hover {
+    background: #334155 !important;
+}
+
+/* Links */
+body.dark-mode a {
+    color: #c7d2fe;
+}
+
+/* Attendance history */
+body.dark-mode .history,
+body.dark-mode .history-summary,
+body.dark-mode .history li {
+    background: #334155 !important;
+    color: white !important;
+}

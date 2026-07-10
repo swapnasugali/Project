@@ -18,12 +18,8 @@ body {
 /* =========================
    LAPTOP VIEW - 901px and above
    ========================= */
-<<<<<<< HEAD
 
 .layout {
-=======
- .layout {
->>>>>>> c4d43d1 (added profile, modifeied code in all the modules)
     display: flex;
     min-height: 100vh;
 }
@@ -35,12 +31,13 @@ body {
     padding: 28px 20px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 15px;
     color: white;
+    font-weight: bold;
 }
 
 .sidebar h2 {
-    font-size: 26px;
+    font-size: 35px;
     margin-bottom: 15px;
 }
 
@@ -53,7 +50,7 @@ body {
 }
 
 .sidebar a:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(220, 213, 214, 0.2);
 }
 
 #logoutButton {
@@ -65,7 +62,12 @@ body {
     background: white;
     color: #251a9a;
     font-size: 16px;
+    font-weight: bold;
     cursor: pointer;
+}
+
+#logoutButton:hover {
+    background: #09ca12;
 }
 
 .main-content {
@@ -78,6 +80,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    gap: 20px;
     margin-bottom: 30px;
 }
 
@@ -89,55 +92,39 @@ body {
 .top p {
     margin-top: 8px;
     font-size: 16px;
+    color: #312e81;
 }
 
 #welcome {
     color: #17105f;
     font-size: 20px;
+    font-weight: bold;
 }
 
+/* Dashboard Cards */
 .cards {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-<<<<<<< HEAD
 }
 
 .card {
-    width: 100%;
-=======
-}
-
-#container {
-    display: flex;
-    gap: 20px;             
-    flex-wrap: wrap;       
-    margin-top: 20px;
-}
-
-.card {
-
-    width: calc(10% - 15px);
-    min-height: 110px;
->>>>>>> c4d43d1 (added profile, modifeied code in all the modules)
+    width: 20%;
+    min-height: 125px;
     padding: 22px;
     background: rgba(255, 255, 255, 0.94);
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-<<<<<<< HEAD
-=======
-
+    border-left: 5px solid #251a9a;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 8px;
->>>>>>> c4d43d1 (added profile, modifeied code in all the modules)
 }
 
 .card p {
     color: #470de8;
     font-size: 16px;
-    margin-bottom: 12px;
 }
 
 .card h2 {
@@ -145,12 +132,9 @@ body {
     font-size: 30px;
 }
 
+/* Recent Activity Box */
 .recent {
-<<<<<<< HEAD
-    width: 100%;
-=======
-    width: 50%;
->>>>>>> c4d43d1 (added profile, modifeied code in all the modules)
+    width: 30%;
     margin-top: 28px;
     padding: 22px;
     background: rgba(255, 255, 255, 0.94);
@@ -163,17 +147,16 @@ body {
     margin-bottom: 12px;
 }
 
-<<<<<<< HEAD
+.recent p {
+    color: #312e81;
+    line-height: 1.6;
+   
+}
+
 /* =========================
    TABLET VIEW - 601px to 900px
    ========================= */
 
-=======
-
-   /* TABLET VIEW - 601px to 900px */
-
- 
->>>>>>> c4d43d1 (added profile, modifeied code in all the modules)
 @media (min-width: 601px) and (max-width: 900px) {
     .sidebar {
         width: 210px;
@@ -213,7 +196,6 @@ body {
     .card h2 {
         font-size: 26px;
     }
-<<<<<<< HEAD
 }
 
 /* =========================
@@ -221,14 +203,6 @@ body {
    ========================= */
 
 @media (max-width: 600px) {
-=======
-} 
-
- 
-   /* PHONE VIEW - 600px and below */
-
- @media (max-width: 600px) {
->>>>>>> c4d43d1 (added profile, modifeied code in all the modules)
     body {
         background-attachment: scroll;
     }
@@ -295,8 +269,3 @@ body {
         padding: 18px;
     }
 }
-
-<<<<<<< HEAD
-=======
-
->>>>>>> c4d43d1 (added profile, modifeied code in all the modules)

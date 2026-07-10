@@ -3,7 +3,7 @@
 }
 
 body {
-    margin: 10px;
+    margin: 200px;
     min-height: 100vh;
     font-family: Arial, sans-serif;
     background-image: url("../images/image.webp");
@@ -50,18 +50,18 @@ body > h1 {
     display: block;
     margin-top: 15px;
     text-align: left;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
-    color: #333;
+    color: #0f0c0c;
 }
 
 #loginForm input {
     width: 100%;
-    padding: 11px;
+    padding: 20px;
     margin-top: 6px;
-    border: 1px solid #aaa;
+    border: 3px solid #aaa;
     border-radius: 6px;
-    font-size: 15px;
+    font-size: 20px;
     outline: none;
 }
 
@@ -118,13 +118,13 @@ small {
 
 .login-button {
     width: 100%;
-    padding: 12px;
-    margin-top: 22px;
+    padding: 15px;
+    margin-top: 25px;
     border: none;
     border-radius: 6px;
     background: #251a9a;
     color: white;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
     cursor: pointer;
 }

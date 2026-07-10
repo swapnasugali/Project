@@ -6,6 +6,7 @@
     <title>Add Student</title>
 
     <link rel="stylesheet" href="../css/student.css">
+    <link rel="stylesheet" href="../css/theme.css">
 </head>
 <body>
 
@@ -56,7 +57,7 @@
                     <div>
                         <label for="gender">Gender</label>
                         <select id="gender">
-                            <option value="">Select Gender</option>
+                            <option value="Select Gender">Select Gender</option>
                             <option value="Female">Female</option>
                             <option value="Male">Male</option>
                             <option value="Other">Other</option>
@@ -80,7 +81,8 @@
                             <option value="CSE">CSE</option>
                             <option value="ECE">ECE</option>
                             <option value="EEE">EEE</option>
-                            <option value="BCA">BCA</option>
+                            <option value="ME">ME</option>
+                            <option value="CE">CE</option>
                         </select>
                     </div>
 
@@ -169,23 +171,6 @@
                     <div>
                         <label for="video">Video Introduction</label>
                         <input type="file" id="video" accept="video/*">
-                        <label for="profileImage" >Profile Image</label>
-                        <input type="file" id="profileImage" accept="image/*" required>
-                    </div>
-
-                    <div>
-                        <label for="resume" >Resume</label>
-                        <input type="file" id="resume" accept=".pdf,.doc,.docx" required>
-                    </div>
-
-                    <div>
-                        <label for="audio" >Audio Introduction</label>
-                        <input type="file" id="audio" accept="audio/*" required>
-                    </div>
-
-                    <div>
-                        <label for="video" >Video Introduction</label>
-                        <input type="file" id="video" accept="video/*" required>
                     </div>
                 </div>
 
@@ -200,6 +185,7 @@
         </div>
     </main>
 
+    <script src="../js/theme.js"></script>
     <script src="../js/student.js"></script>
 </body>
 </html>

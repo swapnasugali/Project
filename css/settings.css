@@ -1,0 +1,298 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f1f5f9;
+    color: #1e293b;
+    min-height: 100vh;
+}
+
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar */
+
+.sidebar {
+    width: 250px;
+    background: #251a9a;
+    padding: 28px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.sidebar h2 {
+    color: white;
+    font-size: 25px;
+    margin-bottom: 18px;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.sidebar a:hover,
+.sidebar .active-link {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#logoutButton {
+    margin-top: 20px;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    background: white;
+    color: #251a9a;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Main Content */
+
+.main-content {
+    flex: 1;
+    padding: 35px;
+}
+
+.page-header {
+    margin-bottom: 25px;
+}
+
+.page-header h1 {
+    font-size: 32px;
+    color: #17105f;
+}
+
+.page-header p {
+    margin-top: 8px;
+    color: #64748b;
+}
+
+/* Settings Cards */
+
+.settings-box {
+    max-width: 900px;
+    background: white;
+    padding: 25px;
+    margin-bottom: 22px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.settings-box h2 {
+    color: #17105f;
+    margin-bottom: 8px;
+}
+
+.small-text {
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+/* Theme Cards */
+
+.theme-options {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.theme-card {
+    width: 260px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 16px;
+    cursor: pointer;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.theme-card:hover {
+    border-color: #251a9a;
+    background: #f8fafc;
+}
+
+.theme-card input {
+    margin-top: 4px;
+    accent-color: #251a9a;
+}
+
+.theme-card span {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.theme-card small {
+    color: #64748b;
+}
+
+/* Form */
+
+.form-row {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    flex: 1;
+    min-width: 250px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 15px;
+    outline: none;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus {
+    border-color: #251a9a;
+}
+
+/* Buttons */
+
+button {
+    padding: 11px 16px;
+    border: none;
+    border-radius: 6px;
+    background: #251a9a;
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover {
+    background: #17105f;
+}
+
+/* Logout */
+
+.logout-box {
+    border-left: 5px solid #dc2626;
+}
+
+.logout-red {
+    background: #dc2626;
+}
+
+.logout-red:hover {
+    background: #b91c1c;
+}
+
+/* Message */
+
+#message {
+    font-weight: bold;
+    color: #15803d;
+    margin-top: 10px;
+}
+
+/* Dark Mode */
+
+body.dark-mode {
+    background: #0f172a;
+    color: #e2e8f0;
+}
+
+body.dark-mode .main-content {
+    background: #0f172a;
+}
+
+body.dark-mode .sidebar {
+    background: #111827;
+}
+
+body.dark-mode .page-header h1,
+body.dark-mode .settings-box h2 {
+    color: #c7d2fe;
+}
+
+body.dark-mode .page-header p,
+body.dark-mode .small-text {
+    color: #cbd5e1;
+}
+
+body.dark-mode .settings-box {
+    background: #1e293b;
+    box-shadow: none;
+}
+
+body.dark-mode .theme-card {
+    background: #334155;
+    border-color: #475569;
+}
+
+body.dark-mode .theme-card:hover {
+    background: #475569;
+}
+
+body.dark-mode .theme-card small {
+    color: #cbd5e1;
+}
+
+body.dark-mode input[type="text"],
+body.dark-mode input[type="email"] {
+    background: #334155;
+    color: white;
+    border-color: #64748b;
+}
+
+/* Mobile */
+
+@media (max-width: 750px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        min-height: auto;
+        padding: 18px;
+    }
+
+    .sidebar h2 {
+        margin-bottom: 8px;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .page-header h1 {
+        font-size: 28px;
+    }
+
+    .settings-box {
+        padding: 18px;
+    }
+
+    .theme-card {
+        width: 100%;
+    }
+}

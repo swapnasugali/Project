@@ -98,3 +98,4 @@ document.getElementById("logoutButton").addEventListener("click", function () {
     sessionStorage.removeItem("loggedInUser");
     window.location.href = "../index.html";
 });
+

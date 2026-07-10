@@ -6,6 +6,7 @@
     <title>Student List</title>
 
     <link rel="stylesheet" href="../css/student.css">
+    <link rel="stylesheet" href="../css/theme.css">
 </head>
 <body>
 
@@ -16,6 +17,7 @@
             <a href="dashboard.html">Dashboard</a>
             <a href="student.html">Add Student</a>
             <a href="student-list.html">Student List</a>
+            <a href="profile.html">Profile</a>
             <a href="attendance.html">Attendance</a>
         </nav>
 
@@ -26,19 +28,19 @@
         <section class="list-box">
 
             <div class="list-heading">
-                <h2>Student List</h2>
+                <h2 style="color:blue;font-size: 30px;">Student List</h2>
 
-                <a href="student.html" class="add-student-button">
+           <button style="background-color:cornsilk; width:10%; height:30px;"><a href="student.html" class="add-student-button">
                     Student
-                </a>
+                </a></button><br><br>
             </div>
 
-            <div class="list-controls">
+            <div class="list-controls" style="width:20%;">
                 <input
                     type="text"
                     id="searchInput"
                     placeholder="Search by Student ID or Name"
-                >
+                ><br><br>
 
                 <select id="departmentFilter">
                     <option value="All">All Departments</option>
@@ -46,7 +48,7 @@
                     <option value="ECE">ECE</option>
                     <option value="EEE">EEE</option>
                     <option value="BCA">BCA</option>
-                </select>
+                </select><br><br>
 
                 <select id="sortSelect">
                     <option value="">Sort Students</option>
@@ -55,10 +57,10 @@
                     <option value="idLowHigh">Student ID: Low to High</option>
                     <option value="idHighLow">Student ID: High to Low</option>
                 </select>
-            </div>
+            </div><br><br>
 
             <div class="table-container">
-                <table>
+                <table border="1" style="width:60%;height:300px;font-weight: bold;">
                     <thead>
                         <tr>
                             <th>Student ID</th>
@@ -73,19 +75,20 @@
 
                     <tbody id="studentTableBody"></tbody>
                 </table>
-            </div>
+            </div><br><br>
 
             <div class="pagination">
-                <button type="button" id="previousButton">Previous</button>
+                <button type="button" id="previousButton" style="width:10%; color:black; background-color:cadetblue;height:30px">Previous</button>
 
                 <span id="pageNumber">Page 1 of 1</span>
 
-                <button type="button" id="nextButton">Next</button>
+                <button type="button" id="nextButton" style="width:10%; color:black; background-color:cadetblue;height:30px">Next</button>
             </div>
 
         </section>
     </main>
 
+    <script src="../js/theme.js"></script>
     <script src="../js/student-list.js"></script>
 </body>
 </html>

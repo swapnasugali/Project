@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+
+    <link rel="stylesheet" href="../css/settings.css">
+    <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+
+    <div class="layout">
+
+        <aside class="sidebar">
+            <h2>Student Portal</h2>
+
+            <a href="dashboard.html">Dashboard</a>
+            <a href="student.html">Add Student</a>
+            <a href="student-list.html">Student List</a>
+            <a href="attendance.html">Attendance</a>
+            <a href="marks.html">Marks</a>
+            <a href="reports.html">Reports</a>
+            <a href="profile.html">Profile</a>
+            <a href="settings.html" class="active-link">Settings</a>
+
+            <button type="button" id="logoutButton">Logout</button>
+        </aside>
+
+        <main class="main-content">
+
+            <div class="page-header">
+                <h1>Settings</h1>
+                <p>Change theme, update profile, or logout.</p>
+            </div>
+
+            <section class="settings-box">
+                <h2>Theme Settings</h2>
+                <p class="small-text">Select Light Mode or Dark Mode.</p>
+
+                <div class="theme-options">
+
+                    <label class="theme-card">
+                        <input type="radio" name="theme" value="light" id="lightTheme">
+                        <span>
+                            <b>Light Mode</b>
+                            <small>White background and dark text</small>
+                        </span>
+                    </label>
+
+                    <label class="theme-card">
+                        <input type="radio" name="theme" value="dark" id="darkTheme">
+                        <span>
+                            <b>Dark Mode</b>
+                            <small>Dark background and light text</small>
+                        </span>
+                    </label>
+
+                </div>
+
+                <button type="button" id="saveThemeButton">Save Theme</button>
+            </section>
+
+            <section class="settings-box">
+                <h2>Update Profile</h2>
+                <p class="small-text">Your details will be saved in Local Storage.</p>
+
+                <form id="profileForm">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="profileName">Full Name</label>
+                            <input type="text" id="profileName" placeholder="Enter full name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="profileEmail">Email Address</label>
+                            <input type="email" id="profileEmail" placeholder="Enter email address">
+                        </div>
+                    </div>
+
+                    <button type="submit">Update Profile</button>
+                </form>
+            </section>
+
+            <section class="settings-box logout-box">
+                <h2>Logout</h2>
+                <p class="small-text">Click below to logout from the portal.</p>
+
+                <button type="button" id="logoutNowButton" class="logout-red">
+                    Logout Now
+                </button>
+            </section>
+
+            <p id="message"></p>
+
+        </main>
+
+    </div>
+
+    <script src="../js/theme.js"></script>
+    <script src="../js/settings.js"></script>
+</body>
+</html>
