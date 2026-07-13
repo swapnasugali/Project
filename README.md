@@ -129,7 +129,8 @@ CSS3
 JavaScript (ES6)
 Local Storage
 Session Storage
-Project Structure
+
+
 Student-Management-System/
 │
 ├── index.html
@@ -174,6 +175,8 @@ Student-Management-System/
 │   └── theme.js
 │
 ├── images/
+├── audio/
+└── video/
 
 How to Run the Project
 Download or clone the repository.
