@@ -1,0 +1,135 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+
+
+body{
+    background:#eef2ff;
+}
+
+.container{
+    width:500px;
+    max-width:90%;
+    margin:40px auto;
+    background:white;
+    padding:30px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+} 
+
+
+body {
+    background: var(--background-color);
+    color: var(--text-color);
+}
+
+.container {
+    background: var(--card-background);
+}
+
+h1{
+    text-align:center;
+    color:#1e3a8a;
+}
+
+.subtitle{
+    text-align:center;
+    margin:10px 0 25px;
+    color:#555;
+}
+
+.form-group{
+    margin-bottom:18px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:bold;
+}
+
+input,
+textarea{
+
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:6px;
+    font-size:15px;
+
+}
+
+textarea{
+    resize:none;
+}
+
+input:focus,
+textarea:focus{
+
+    outline:none;
+    border:1px solid #2563eb;
+
+}
+
+button{
+
+    width:100%;
+    padding:12px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:6px;
+    font-size:16px;
+    cursor:pointer;
+
+}
+
+button:hover{
+
+    background:#1d4ed8;
+
+}
+
+#successMessage{
+
+    text-align:center;
+    margin-top:20px;
+    font-weight:bold;
+    color:green;
+
+}
+
+@media(max-width:600px){
+
+.container{
+
+    width:95%;
+    padding:20px;
+
+}
+
+}
+
+#successMessage{
+    margin-top:20px;
+    padding:20px;
+    background:#e8f5e9;
+    border:2px solid #4caf50;
+    border-radius:10px;
+    text-align:center;
+}
+
+#successMessage h2{
+    color:#2e7d32;
+    margin-bottom:10px;
+}
+
+#successMessage p{
+    color:#333;
+    margin:5px 0;
+    font-size:16px;
+}

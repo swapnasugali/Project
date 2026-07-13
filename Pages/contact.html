@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+
+    <link rel="stylesheet" href="../css/contact.css">
+    <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>Contact Us</h1>
+    <p class="subtitle">Send your queries or feedback.</p>
+
+    <form id="contactForm">
+
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" id="name" placeholder="Enter your name">
+        </div>
+
+        <div class="form-group">
+            <label>Email</label>
+            <input type="email" id="email" placeholder="Enter your email">
+        </div>
+
+        <div class="form-group">
+            <label>Subject</label>
+            <input type="text" id="subject" placeholder="Enter subject">
+        </div>
+
+        <div class="form-group">
+            <label>Message</label>
+            <textarea id="message" rows="6" placeholder="Enter your message"></textarea>
+        </div>
+
+        <button type="submit">Send Message</button>
+
+    </form>
+
+    <p id="successMessage"></p>
+
+</div>
+
+<script src="../js/contact.js"></script>
+<script src="../js/theme.js"></script>
+
+</body>
+</html>

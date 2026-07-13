@@ -3,6 +3,7 @@ const marksTable = document.getElementById("marksTable");
 const totalStudentsText = document.getElementById("totalStudents");
 const passedStudentsText = document.getElementById("passedStudents");
 const failedStudentsText = document.getElementById("failedStudents");
+const averageMarksText = document.getElementById("averageMarks");
 
 const saveMarksButton = document.getElementById("saveMarksButton");
 const clearMarksButton = document.getElementById("clearMarksButton");
@@ -46,21 +47,62 @@ function calculateResult(html, css, javascript, react, node) {
   return { total, percentage, grade };
 }
 
+// function updateCards() {
+//   const students = getStudents();
+
+//   const passed = marksRecords.filter(function (record) {
+//     return record.grade !== "Fail";
+//   }).length;
+
+//   const failed = marksRecords.filter(function (record) {
+//     return record.grade === "Fail";
+//   }).length;
+
+//   totalStudentsText.textContent = students.length;
+//   passedStudentsText.textContent = passed;
+//   failedStudentsText.textContent = failed;
+// }
+
+
 function updateCards() {
-  const students = getStudents();
 
-  const passed = marksRecords.filter(function (record) {
-    return record.grade !== "Fail";
-  }).length;
+    const students = getStudents();
 
-  const failed = marksRecords.filter(function (record) {
-    return record.grade === "Fail";
-  }).length;
+    const passed = marksRecords.filter(function(record){
+        return record.grade !== "Fail";
+    }).length;
 
-  totalStudentsText.textContent = students.length;
-  passedStudentsText.textContent = passed;
-  failedStudentsText.textContent = failed;
+    const failed = marksRecords.filter(function(record){
+        return record.grade === "Fail";
+    }).length;
+
+    let average = 0;
+
+    if (marksRecords.length > 0) {
+
+        let totalPercentage = 0;
+
+        marksRecords.forEach(function(record){
+            totalPercentage += record.percentage;
+        });
+
+        average = Math.round(totalPercentage / marksRecords.length);
+    }
+
+    totalStudentsText.textContent = students.length;
+    passedStudentsText.textContent = passed;
+    failedStudentsText.textContent = failed;
+    averageMarksText.textContent = average + "%";
 }
+
+
+
+
+
+
+
+
+
 
 function showStudents() {
   const students = getStudents();
@@ -196,17 +238,28 @@ function saveMarks() {
 function clearMarks() {
   const answer = confirm("Do you want to delete all marks records?");
 
-  if (!answer) {
-    return;
-  }
 
-  marksRecords = [];
-  localStorage.removeItem("marksRecords");
+  function clearMarks() {
 
-  showStudents();
+    const answer = confirm("Do you want to delete all marks records?");
+
+    if (!answer) {
+        return;
+    }
+
+    localStorage.removeItem("marksRecords");
+
+    marksRecords = [];
+
+    alert("All marks records deleted successfully.");
+
+    showStudents();
+
+}
 }
 
 saveMarksButton.addEventListener("click", saveMarks);
+
 clearMarksButton.addEventListener("click", clearMarks);
 
 showStudents();

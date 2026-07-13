@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -38,37 +38,33 @@
                 <h3 id="welcome"></h3>
             </div>
 
-<div id =container>
-            <div class="card">
-                   <p>Total Students</p>
-                    <h2 id="totalStudents">0</h2>
-                </div>
+<div id ="container">
+           <div class="card">
+    <p>Total Departments</p>
+    <h2 id="totalDepartments">0</h2>
+</div>
 
-                <div class="card">
-                    <p>Total Departments</p>
-                    <h2>0</h2>
-                </div>
+<div class="card">
+    <p>Total Students</p>
+    <h2 id="totalDepartments">0</h2>
+</div>
 
-                <div class="card">
-                    <p>Present Students</p>
-                    <h2>0</h2>
-                </div>
+<div class="card">
+    <p>Present Students</p>
+    <h2 id="presentStudents">0</h2>
+</div>
 
-                <div class="card">
-                    <p>Absent Students</p>
-                    <h2>0</h2>
-                </div>
+<div class="card">
+    <p>Absent Students</p>
+    <h2 id="absentStudents">0</h2>
+</div>
 
-                <div class="card">
-                    <p>Highest Scorer</p>
-                    <h2>-</h2>
-                </div>
-            </div>
+<div class="card">
+    <p>Highest Scorer</p>
+    <h2 id="highestScorer">-</h2>
+</div>
 
-            <div class="recent">
-                <h2>Recent Students</h2>
-                <p>No students added yet.</p>
-            </div>
+<tbody id="recentStudents"></tbody>
 
             </div>
 
@@ -78,5 +74,119 @@
 
     <script src="../js/theme.js"></script>
     <script src="../js/dashboard.js"></script>
+</body>
+</html>
+
+
+
+ -->
+
+
+
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/theme.css">
+</head>
+<body>
+
+<div class="layout">
+
+    <aside class="sidebar">
+
+        <h2>Student Portal</h2>
+
+        <a href="dashboard.html">Dashboard</a>
+        <a href="student.html">Students</a>
+        <a href="student-list.html">Student List</a>
+        <a href="attendance.html">Attendance</a>
+        <a href="marks.html">Marks</a>
+        <a href="reports.html">Reports</a>
+        <a href="settings.html">Settings</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+
+        <button id="logoutButton">Logout</button>
+
+    </aside>
+
+    <main class="main-content">
+
+        <div class="top">
+
+            <div>
+                <h1>Dashboard</h1>
+                <p id="dateTime"></p>
+            </div>
+
+            <h3 id="welcome"></h3>
+
+        </div>
+
+        <div id="container" class="cards">
+
+            <div class="card">
+                <p>Total Students</p>
+                <h2 id="totalStudents">0</h2>
+            </div>
+
+            <div class="card">
+                <p>Total Departments</p>
+                <h2 id="totalDepartments">0</h2>
+            </div>
+
+            <div class="card">
+                <p>Present Students</p>
+                <h2 id="presentStudents">0</h2>
+            </div>
+
+            <div class="card">
+                <p>Absent Students</p>
+                <h2 id="absentStudents">0</h2>
+            </div>
+
+            <div class="card">
+                <p>Highest Scorer</p>
+                <h2 id="highestScorer">-</h2>
+            </div>
+
+        </div>
+
+        <div class="recent">
+
+            <h2>Recent Students</h2>
+
+            <table width="100%" border="1">
+
+                <thead>
+
+                    <tr>
+                        <th>Student ID</th>
+                        <th>Name</th>
+                        <th>Department</th>
+                    </tr>
+
+                </thead>
+
+                <tbody id="recentStudents">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="../js/theme.js"></script>
+<script src="../js/dashboard.js"></script>
+
 </body>
 </html>

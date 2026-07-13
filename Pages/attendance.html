@@ -48,8 +48,8 @@
       </div>
 
       <div class="buttons">
-        <button type="button" id="allPresentButton">Mark All Present</button>
-        <button type="button" id="saveAttendanceButton">Save / Update Attendance</button>
+        <button type="button" onclick="allPresent()">Mark All Present</button>
+        <button type="button" onclick="saveAttendance()">Save / Update Attendance</button>
       </div>
     </div>
 
@@ -74,7 +74,16 @@
     </div>
 
     <div id="historyBox" class="history hidden">
-      <button type="button" class="close" id="closeHistoryButton">X</button>
+      <!-- <button type="button" class="close" id="closeHistoryButton">X</button> -->
+       <button
+    type="button"
+    class="close-button"
+    onclick="closeHistory()"> X
+    
+</button>
+
+
+
 
       <h2 id="historyTitle">Attendance History</h2>
 
