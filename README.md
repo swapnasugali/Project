@@ -1,4 +1,4 @@
-<img width="125" height="372" alt="image" src="https://github.com/user-attachments/assets/b6e4c5d4-ee3b-4ada-b49c-a29ff1d25886" />Student Management Portal
+Student Management Portal
 Project Overview
 
 The Student Management Portal is a web-based application developed using HTML, CSS, and JavaScript. It helps educational institutions manage student information efficiently. The application allows users to register students, manage attendance, record marks, generate reports, update settings, view student profiles, and contact administrators.
